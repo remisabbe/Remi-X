@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMI-X | Foto's</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>REMI‑X</h1>
+        <p class="tagline">Live • Vibes • Moments</p>
+        <nav>
+            <a class="nav-button" href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <section class="gallery">
+    <h2>Foto's</h2>
+
+    <div id="slideshow">
+        <div class="slides">
+            <img src="../images/Schermafbeelding 2026-02-04 105918.png" alt="Foto 1">
+            <img src="../images/foto fuif.webp" alt="Foto 2">
+            <img src="../images/fuif 2.jpg" alt="Foto 3">
+            <!-- Voeg hier extra foto's toe -->
+        </div>
+
+        <!-- Pijltjes -->
+        <button class="arrow left">&#10094;</button>
+        <button class="arrow right">&#10095;</button>
+
+        <!-- Bolletjes -->
+        <div class="dots"></div>
+    </div>
+</section>
+
+<script>
+    const slides = document.querySelectorAll('#slideshow .slides img');
+    const dotsContainer = document.querySelector('#slideshow .dots');
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
+
+    let index = 0;
+
+    // Bolletjes automatisch genereren
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(i) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        slides[i].classList.add('active');
+        dots[i].classList.add('active');
+    }
+
+    function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }
+
+    function prevSlide() {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+    }
+
+    function goToSlide(i) {
+        index = i;
+        showSlide(index);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Automatische slideshow
+    setInterval(nextSlide, 4000);
+</script>
+
+        <footer>
+        <p>© 2026 REMI‑X – All Rights Reserved</p>
+    </footer>
+    </script>
+
+</body>
+</html>

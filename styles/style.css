@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0a0a0a;
+    color: #f0f0f0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    padding: 60px 20px;
+    background: linear-gradient(90deg, #ff0066, #8a00ff);
+    box-shadow: 0 0 25px #8a00ff;
+    animation: glow 4s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px #ff0066; }
+    100% { box-shadow: 0 0 40px #8a00ff; }
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 6px;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ff0066;
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+ul li {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #222;
+}
+
+.contact-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-links a {
+    padding: 12px 25px;
+    background: #ff0066;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #ff0066;
+}
+
+.contact-links a:hover {
+    background: #8a00ff;
+    box-shadow: 0 0 25px #8a00ff;
+    transform: scale(1.08);
+}
+
+footer {
+    padding: 20px;
+    background: #111;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+
+
+
+/* Navigatieknop */
+nav {
+    margin-top: 20px;
+}
+
+.nav-button {
+    padding: 12px 25px;
+    background: transparent;
+    border: 2px solid #ff0066;
+    color: #ff0066;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px #ff0066;
+}
+
+/* Hover effect */
+.nav-button:hover {
+    background: #ff0066;
+    color: white;
+    box-shadow: 0 0 20px #ff0066, 0 0 40px #8a00ff;
+    transform: scale(1.08);
+}
+/* Slideshow container */
+#slideshow {
+    position: relative;
+    max-width: 900px;
+    height: 500px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #ff0066;
+}
+
+/* Foto's overlappen */
+#slideshow .slides img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 15px;
+}
+
+#slideshow .slides img.active {
+    opacity: 1;
+}
+
+/* Pijltjes */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background: #ff0066;
+    box-shadow: 0 0 15px #ff0066;
+}
+
+.arrow.left {
+    left: 15px;
+}
+
+.arrow.right {
+    right: 15px;
+}
+
+/* Bolletjes */
+.dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #777;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #ff0066;
+    box-shadow: 0 0 10px #ff0066;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
